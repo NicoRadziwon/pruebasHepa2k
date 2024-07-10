@@ -254,6 +254,10 @@ body {
   }
 }
 
+.logoCarga {
+  width: 100vw;
+  height: 100vh;
+}
 
 @media (max-width: 1024px) {
   .container {
@@ -272,10 +276,178 @@ body {
   }
 
   .left, .right {
-    width: 100%;
+    width: 100vw;
+    height: 90vh;
   }
 
   .patternVapo, .patternEnElHall{
-    height: 100%;
+    height: 100vh;
+  }
+
+  .likesEnElHall {
+    bottom: 1rem;
+  }
+
+  .likesVapo {
+    top: 1rem;
+  }
+
+  .rotarIzq {
+    animation: rotarIzq 0.8s linear forwards;
+  }
+  
+  @keyframes rotarIzq {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(-90deg);
+    }
+  }
+
+  .rotarInvIzq {
+    animation: rotarInvIzq 0.8s linear forwards;
+  }
+
+  @keyframes rotarInvIzq {
+    from {
+      transform: rotate(-90deg);
+    }
+    to {
+      transform: rotate(0deg);
+    }
+  }
+
+  .rotarImg1Izq {
+    animation: rotarImg1Izq 0.8s linear forwards;
+  }
+  
+  @keyframes rotarImg1Izq {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(90deg);
+    }
+  }
+
+  .rotarInvImg1Izq {
+    animation: rotarInvImg1Izq 0.8s linear forwards;
+  }
+
+  @keyframes rotarInvImg1Izq {
+    from {
+      transform: rotate(90deg);
+    }
+    to {
+      transform: rotate(0deg);
+    }
+  }
+
+  .rotarImg2Izq {
+    animation: rotarImg2Izq 0.8s linear forwards;
+  }
+  
+  @keyframes rotarImg2Izq {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(90deg);
+    }
+  }
+
+  .rotarInvImg2Izq {
+    animation: rotarInvImg2Izq 0.8s linear forwards;
+  }
+
+  @keyframes rotarInvImg2Izq {
+    from {
+      transform: rotate(90deg);
+    }
+    to {
+      transform: rotate(0deg);
+    }
+  }
+
+
+  .rotarDer {
+    animation: rotarDer 0.8s linear forwards;
+  }
+  
+  @keyframes rotarDer {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(-90deg);
+    }
+  }
+
+  .rotarInvDer {
+    animation: rotarInvDer 0.8s linear forwards;
+  }
+
+  @keyframes rotarInvDer {
+    from {
+      transform: rotate(-90deg);
+    }
+    to {
+      transform: rotate(0deg);
+    }
+  }
+
+  .rotarImg1Der {
+    animation: rotarImg1Der 0.8s linear forwards;
+  }
+  
+  @keyframes rotarImg1Der {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(90deg);
+    }
+  }
+
+  .rotarInvImg1Der {
+    animation: rotarInvImg1Der 0.8s linear forwards;
+  }
+
+  @keyframes rotarInvImg1Der {
+    from {
+      transform: rotate(90deg);
+    }
+    to {
+      transform: rotate(0deg);
+    }
+  }
+
+  .rotarImg2Der {
+    animation: rotarImg2Der 0.8s linear forwards;
+  }
+  
+  @keyframes rotarImg2Der {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(90deg);
+    }
+  }
+
+  .rotarInvImg2Der {
+    animation: rotarInvImg2Der 0.8s linear forwards;
+  }
+
+  @keyframes rotarInvImg2Der {
+    from {
+      transform: rotate(90deg);
+    }
+    to {
+      transform: rotate(0deg);
+    }
   }
 }
+
+
