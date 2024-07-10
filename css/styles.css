@@ -263,7 +263,7 @@ body {
 @media only screen and (max-width: 1024px) {
   .container {
       flex-direction: column;
-      height: 100vh;
+      height: 90%;
   }
 
   .boton-circular {
@@ -282,11 +282,11 @@ body {
 
 
   .likesEnElHall {
-    bottom: 3rem;
+    bottom: .5rem;
   }
 
   .likesVapo {
-    top: 3rem;
+    top: .5rem;
   }
 
   .rotarIzq {
@@ -446,19 +446,4 @@ body {
     }
   }
 }
-
-@media only screen and (max-width: 800px) {
-  .container {
-    height: auto;
-  }
-
-  .likesEnElHall {
-    bottom: .5rem;
-  }
-
-  .likesVapo {
-    top: .5rem;
-  }
-}
-
 
