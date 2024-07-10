@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
+    overflow: hidden;
 }
 
 body {
@@ -263,7 +264,7 @@ body {
 @media (max-width: 1024px) {
   .container {
       flex-direction: column;
-      height: auto;
+      height: 100vh;
   }
 
   .boton-circular {
@@ -282,11 +283,11 @@ body {
 
 
   .likesEnElHall {
-    bottom: 1rem;
+    bottom: 3rem;
   }
 
   .likesVapo {
-    top: 1rem;
+    top: 3rem;
   }
 
   .rotarIzq {
