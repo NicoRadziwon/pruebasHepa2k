@@ -60,7 +60,11 @@ const pLikesE = `   <label id="labelSvg" class="containerLikeEnElHall">
                         <input type="checkbox" onclick="likeEnElHall()">
                     </label>`;
 
-const pLogo = `<video autoplay muted id="logoCarga" class="logoCarga right"> 
+const pLogo1 = `<video autoplay muted id="logoCarga1" class="logoCarga right"> 
+                    <source src="./logos/logo.mp4" type="video/mp4">
+                </video>`;
+
+const pLogo2 = `<video autoplay muted id="logoCarga2" class="logoCarga right"> 
                     <source src="./logos/logo.mp4" type="video/mp4">
                 </video>`;
 
@@ -70,14 +74,16 @@ function accionIzquierda() {
         container.classList.remove('botonesMedio');
         document.getElementById('videoPatternV').innerHTML = '';
         document.getElementById('videoPatternE').innerHTML = '';
-        document.getElementById('videoPantallaCompletaVapo').innerHTML = pLogo;
+        document.getElementById('videoPantallaCompletaVapo').innerHTML = pLogo1;
         setTimeout(() => {
-            document.getElementById('logoCarga').classList.add('animate__animated','animate__fadeOut');
-            setTimeout(() => {
-                document.getElementById('videoPantallaCompletaVapo').innerHTML = videoVapo;
-                document.getElementById('likesVapo').innerHTML = pLikesV;
-                document.getElementById('labelSvg').innerHTML += svgs;
-            }, 1000);
+            if (document.getElementById('logoCarga1')){
+                document.getElementById('logoCarga1').classList.add('animate__animated','animate__fadeOut');
+                setTimeout(() => {
+                    document.getElementById('videoPantallaCompletaVapo').innerHTML = videoVapo;
+                    document.getElementById('likesVapo').innerHTML = pLikesV;
+                    document.getElementById('labelSvg').innerHTML += svgs;
+                }, 1000);
+            }
         }, 3300);
         setTimeout(() => {
             document.getElementById('botonesSlide').style.right = '-100%';
@@ -90,7 +96,12 @@ function accionIzquierda() {
     } else if (container.classList.contains('botonesIzquierda')){
         container.classList.add('botonesMedio');
         container.classList.remove('botonesIzquierda','botonesDerecha');
-        document.getElementById('videoPantallaCompletaVapo').removeChild(document.getElementById('leftSideVideo'));
+        if (document.getElementById('logoCarga1')){
+            document.getElementById('videoPantallaCompletaVapo').removeChild(document.getElementById('logoCarga1'));
+        }
+        if (document.getElementById('leftSideVideo')){
+            document.getElementById('videoPantallaCompletaVapo').removeChild(document.getElementById('leftSideVideo'));
+        }
         document.getElementById('leftSide').innerHTML = pLeftSideVideo;
         document.getElementById('rightSide').innerHTML = pRightSideVideo;
         setTimeout(() => {
@@ -117,16 +128,17 @@ function accionDerecha() {
         container.classList.remove('botonesMedio');
         document.getElementById('videoPatternV').innerHTML = '';
         document.getElementById('videoPatternE').innerHTML = '';
-        document.getElementById('videoPantallaCompletaEnElHall').innerHTML = pLogo;
+        document.getElementById('videoPantallaCompletaEnElHall').innerHTML = pLogo2;
         setTimeout(() => {
-            document.getElementById('logoCarga').classList.add('animate__animated','animate__fadeOut');
-            setTimeout(() => {
-                document.getElementById('videoPantallaCompletaEnElHall').innerHTML = videoEnElHall;
-                document.getElementById('likesEnElHall').innerHTML = pLikesE;
-                document.getElementById('labelSvg').innerHTML += svgs;
-            }, 1000);
+            if (document.getElementById('logoCarga2')){
+                document.getElementById('logoCarga2').classList.add('animate__animated','animate__fadeOut');
+                setTimeout(() => {
+                    document.getElementById('videoPantallaCompletaEnElHall').innerHTML = videoEnElHall;
+                    document.getElementById('likesEnElHall').innerHTML = pLikesE;
+                    document.getElementById('labelSvg').innerHTML += svgs;
+                }, 1000);
+            }
         }, 3300);
-        
         setTimeout(() => {
             document.getElementById('botonesSlide').style.left = '-100%';
             if(window.innerWidth < 1024){
@@ -139,7 +151,12 @@ function accionDerecha() {
     } else if (container.classList.contains('botonesDerecha')){
         container.classList.add('botonesMedio');
         container.classList.remove('botonesIzquierda','botonesDerecha');
-        document.getElementById('videoPantallaCompletaEnElHall').removeChild(document.getElementById('rightSideVideo'));
+        if (document.getElementById('logoCarga2')){
+            document.getElementById('videoPantallaCompletaEnElHall').removeChild(document.getElementById('logoCarga2'));
+        }
+        if (document.getElementById('rightSideVideo')){
+            document.getElementById('videoPantallaCompletaEnElHall').removeChild(document.getElementById('rightSideVideo'));
+        }
         document.getElementById('leftSide').innerHTML = pLeftSideVideo;
         document.getElementById('rightSide').innerHTML = pRightSideVideo;
         setTimeout(() => {

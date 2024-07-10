@@ -257,6 +257,7 @@ body {
 .logoCarga {
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
 }
 
 @media (max-width: 1024px) {
@@ -277,12 +278,8 @@ body {
 
   .left, .right {
     width: 100vw;
-    height: 90vh;
   }
 
-  .patternVapo, .patternEnElHall{
-    height: 100vh;
-  }
 
   .likesEnElHall {
     bottom: 1rem;
