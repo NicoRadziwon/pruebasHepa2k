@@ -49,7 +49,6 @@ function accionIzquierda() {
                 leftSide.style.flex = 1;
                 rightSide.style.flex = 0;
                 rightSide.style.visibility = "hidden";
-                botonCircular.style.right = "0";
                 botonCircular.style.left = "90%";
             } else {
                 if (os == 'Android' || os == 'Other') {
@@ -59,12 +58,12 @@ function accionIzquierda() {
                     botonCircular.style.left = "70%";
                 }
                 leftSide.style.removeProperty('display');
-                rightSide.style.display = "none";
                 container.style.width = "100vh";
                 container.style.height = "100vw";
-                botonCircular.style.right = "0";
+                rightSide.style.display = "none";
                 
             }
+            botonCircular.style.right = "0";
             patternVapo.style.display = "none";
             patternEnElHall.style.display = "none";
             leftSideVideo.muted = false;
@@ -97,12 +96,16 @@ function accionDerecha() {
                 leftSide.style.visibility = "hidden";
                 botonCircular.style.right = "90%";
             } else {
-                container.style.transform = "rotate(90deg)";
+                if (os == 'Android' || os == 'Other') {
+                    botonCircular.style.left = "80%";
+                    container.style.transform = "rotate(90deg)";
+                } else if (os == 'iOS'){
+                    botonCircular.style.left = "70%";
+                }
+                rightSide.style.removeProperty('display');
                 container.style.width = "100vh";
                 container.style.height = "100vw";
-                rightSide.style.removeProperty('display');
                 leftSide.style.display = "none";
-                botonCircular.style.right = "80%";
             }
             botonCircular.style.left = "0";
             patternVapo.style.display = "none";
@@ -132,6 +135,9 @@ function resetSides() {
         leftSide.style.visibility = "visible";
 
     } else {
+        if (os == 'Android' || os == 'Other') {
+            container.style.transform = "rotate(0deg)";
+        } 
         leftSide.style.removeProperty('display');
         rightSide.style.removeProperty('display');
         container.style.transform = "rotate(0deg)";
