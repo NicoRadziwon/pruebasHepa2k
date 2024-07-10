@@ -85,6 +85,11 @@ function accionIzquierda() {
                 }, 1000);
             }
         }, 3300);
+        if (document.getElementById('videoPantallaCompletaVapo')) {
+            document.getElementById('videoPantallaCompletaVapo').addEventListener("ended", (event) => {
+                accionIzquierda();
+            });
+        }
         setTimeout(() => {
             document.getElementById('botonesSlide').style.right = '-100%';
             if(window.innerWidth < 1024){
@@ -139,6 +144,11 @@ function accionDerecha() {
                 }, 1000);
             }
         }, 3300);
+        if (document.getElementById('videoPantallaCompletaEnElHall')) {
+            document.getElementById('videoPantallaCompletaEnElHall').addEventListener("ended", (event) => {
+                accionDerecha();
+            });
+        }
         setTimeout(() => {
             document.getElementById('botonesSlide').style.left = '-100%';
             if(window.innerWidth < 1024){
