@@ -54,7 +54,7 @@ function accionIzquierda() {
                 if (os == 'Android' || os == 'Other') {
                     botonCircular.style.left = "80%";
                     container.style.transform = "rotate(90deg)";
-                } else if (os == 'iOS'){
+                } else {
                     botonCircular.style.left = "70%";
                 }
                 leftSide.style.removeProperty('display');
@@ -97,10 +97,10 @@ function accionDerecha() {
                 botonCircular.style.right = "90%";
             } else {
                 if (os == 'Android' || os == 'Other') {
-                    botonCircular.style.left = "80%";
+                    botonCircular.style.right = "80%";
                     container.style.transform = "rotate(90deg)";
-                } else if (os == 'iOS'){
-                    botonCircular.style.left = "70%";
+                } else {
+                    botonCircular.style.right = "70%";
                 }
                 rightSide.style.removeProperty('display');
                 container.style.width = "100vh";
