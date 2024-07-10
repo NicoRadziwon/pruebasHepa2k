@@ -52,7 +52,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
 }
 
 .left, .right {
@@ -261,7 +260,7 @@ body {
   overflow: hidden;
 }
 
-@media (max-width: 1024px) {
+@media only screen and (max-width: 1024px) {
   .container {
       flex-direction: column;
       height: 100vh;
@@ -445,6 +444,20 @@ body {
     to {
       transform: rotate(0deg);
     }
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .container {
+    height: auto;
+  }
+
+  .likesEnElHall {
+    bottom: .5rem;
+  }
+
+  .likesVapo {
+    top: .5rem;
   }
 }
 
