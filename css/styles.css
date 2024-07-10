@@ -263,7 +263,10 @@ body {
 @media only screen and (max-width: 1024px) {
   .container {
       flex-direction: column;
-      height: 90%;
+  }
+
+  .videoPantallaCompletaVapo, .videoPantallaCompletaEnElHall{
+    width: 90vw;
   }
 
   .boton-circular {
