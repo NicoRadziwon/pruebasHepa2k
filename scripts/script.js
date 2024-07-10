@@ -65,8 +65,6 @@ function accionIzquierda() {
                 botonCircular.style.right = "0";
                 
             }
-
-            }
             patternVapo.style.display = "none";
             patternEnElHall.style.display = "none";
             leftSideVideo.muted = false;
