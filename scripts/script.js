@@ -57,10 +57,10 @@ const pLikesE = `   <div id="likesEnElHall" class="likesEnElHall">
                         </label>
                     </div>`;
 const pLogo1 = `<video autoplay muted id="logoCarga1" class="logoCarga right"> 
-                    <source src="./logos/logo.mp4" type="video/mp4">
+                    <source src="./logos/introhepa.mp4" type="video/mp4">
                 </video>`;
 const pLogo2 = `<video autoplay muted id="logoCarga2" class="logoCarga right"> 
-                    <source src="./logos/logo.mp4" type="video/mp4">
+                    <source src="./logos/introhepa.mp4" type="video/mp4">
                 </video>`;
 
 function accionIzquierda() {

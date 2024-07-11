@@ -70,35 +70,47 @@ body {
 }
 
 .mitad:hover {
-  background-color: rgb(217, 31, 31);
+  background-color: rgb(138, 138, 138);
   -webkit-transition: all 0.35s ease;
   transition: all 0.35s ease;
 }
 
 .mitad:active {
-  background-color: rgb(119, 16, 16);
+  background-color: rgb(71, 71, 71);
 }
 
 .izquierda {
+  color: white;
+  text-align: center;
   border: none;
   left: 0;
   border-top-left-radius: 50%;
   border-bottom-left-radius: 50%;
+
+}
+
+.izquierda:hover {
 }
 
 .derecha {
+  color: white;
+  text-align: center;
   border: none;
   right: 0;
   border-top-right-radius: 50%;
   border-bottom-right-radius: 50%;
 }
 
+.derecha:hover {
+}
+
 .imgAnillo1 {
-  width: 100%;
+  width: 40%;
 }
 
 .imgAnillo2 {
-  width: 100%;
+  width: 80%;
+  rotate: 90deg;
 }
 
 .resoGif {

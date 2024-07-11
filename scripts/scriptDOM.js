@@ -15,10 +15,10 @@ const pRightSideVideo = `   <div id="videoPatternE" class="videoPattern">
                             </div>`;
 
 const pBotones = `  <button id="botonIzq" class="mitad izquierda" onclick="accionIzquierda()">
-                        <img id="anillo1" class="imgAnillo1" src="./logos/PNG-OBJ-SEPARADOS/PNG-ANILLO1.png">
+                        <img id="anillo1" class="imgAnillo1" src="./imagenes/vape.png">
                     </button>
                     <button id="botonDer" class="mitad derecha" onclick="accionDerecha()">
-                        <img id="anillo2" class="imgAnillo2" src="./logos/PNG-OBJ-SEPARADOS/PNG-ANILLO2.png">
+                        <img id="anillo2" class="imgAnillo2" src="./imagenes/bill.png">
                     </button>`;
 
 function innerDOM() {
