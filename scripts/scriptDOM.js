@@ -4,7 +4,7 @@ const botonCircular = document.getElementById('botonesSlide');
 const rightSide = document.getElementById('rightSide');
 
 const pLeftSideVideo = `    <div id="videoPatternV" class="videoPattern">
-                                <img id="rightSideVideo" class="side left" src="./gifs/animationHumo.gif" class="humoVapo">
+                                <img id="rightSideVideo" class="side left" src="./gifs/humo.gif" class="humoVapo">
                             </div>`;
 
 const pRightSideVideo = `   <div id="videoPatternE" class="videoPattern">
