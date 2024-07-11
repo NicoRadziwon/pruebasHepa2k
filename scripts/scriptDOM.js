@@ -4,10 +4,7 @@ const botonCircular = document.getElementById('botonesSlide');
 const rightSide = document.getElementById('rightSide');
 
 const pLeftSideVideo = `    <div id="videoPatternV" class="videoPattern">
-                            <div id="patternVapo"></div>
-                                <video autoplay muted loop id="leftSideVideo" class="side left">
-                                    <source src="./videos/VAPO.mp4" type="video/mp4">
-                                </video>
+                                <img id="rightSideVideo" class="side left" src="./gifs/animationHumo.gif" class="humoVapo">
                             </div>`;
 
 const pRightSideVideo = `   <div id="videoPatternE" class="videoPattern">
@@ -24,18 +21,10 @@ const pBotones = `  <button id="botonIzq" class="mitad izquierda" onclick="accio
                         <img id="anillo2" class="imgAnillo2" src="./logos/PNG-OBJ-SEPARADOS/PNG-ANILLO2.png">
                     </button>`;
 
-const humo = `<img src="./gifs/SMOKE.gif" class="humoVapo">`;
-
 function innerDOM() {
     leftSide.innerHTML = pLeftSideVideo;
     botonCircular.innerHTML = pBotones;
     rightSide.innerHTML = pRightSideVideo;
-
-    setTimeout(() => {
-        document.getElementById("patternVapo").classList.add('patternVapo');
-        document.getElementById("patternEnElHall").classList.add('patternEnElHall');
-        document.getElementById("patternVapo").innerHTML = humo;
-    }, 1000);
 }
 
 const tag = document.createElement('script');

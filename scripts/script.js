@@ -45,13 +45,14 @@ const videoVapo = ` <video autoplay load volume="0.3" id="leftSideVideo" class="
 const videoEnElHall = ` <video autoplay load volume="0.3" id="rightSideVideo" class="side right"> 
                             <source src="./videos/EN-EL-HALL.mp4" type="video/mp4">
                         </video>`;
+
 const pLikesV = `   <div id="likesVapo" class="likesVapo">
-                        <label id="labelSvg" class="containerLikeVapo">
+                        <label id="labelSvgV" class="containerLikeVapo">
                             <input type="checkbox" onclick="likeVapo()">
                         </label>
                     </div>`;
 const pLikesE = `   <div id="likesEnElHall" class="likesEnElHall">
-                        <label id="labelSvg" class="containerLikeEnElHall">
+                        <label id="labelSvgE" class="containerLikeEnElHall">
                             <input type="checkbox" onclick="likeEnElHall()">
                         </label>
                     </div>`;
@@ -70,7 +71,6 @@ function accionIzquierda() {
         document.getElementById('videoPatternE').innerHTML = '';
         videoPantallaCompletaVapo.innerHTML = pLogo1;
         container.style.margin = '0';
-        container.style.removeProperty('align-items');
         setTimeout(() => {
             if (document.getElementById('logoCarga1')){
                 document.getElementById('logoCarga1').classList.add('animate__animated','animate__fadeOut');
@@ -79,7 +79,7 @@ function accionIzquierda() {
                     document.getElementById('leftSideVideo').volume = 0.3;
                     document.getElementById('leftSideVideo').play();
                     videoPantallaCompletaVapo.innerHTML += pLikesV;
-                    document.getElementById('labelSvg').innerHTML += svgs;
+                    document.getElementById('labelSvgV').innerHTML += svgs;
                     document.getElementById('likesVapo').style.display = 'block';
                     document.getElementById('likesVapo').style.left = '1rem';
                     document.getElementById('videoPantallaCompletaVapo').style.margin = "1rem";
@@ -141,7 +141,6 @@ function accionDerecha() {
         document.getElementById('videoPatternE').innerHTML = '';
         videoPantallaCompletaEnElHall.innerHTML = pLogo2;
         container.style.margin = '0';
-        container.style.removeProperty('align-items');
         setTimeout(() => {
             if (document.getElementById('logoCarga2')){
                 document.getElementById('logoCarga2').classList.add('animate__animated','animate__fadeOut');
@@ -150,7 +149,7 @@ function accionDerecha() {
                     document.getElementById('rightSideVideo').volume = 0.3;
                     document.getElementById('rightSideVideo').play();
                     videoPantallaCompletaEnElHall.innerHTML += pLikesE;
-                    document.getElementById('labelSvg').innerHTML += svgs;
+                    document.getElementById('labelSvgE').innerHTML += svgs;
                     document.getElementById('likesEnElHall').style.display = 'block';
                     document.getElementById('likesEnElHall').style.right = '1rem';
                     document.getElementById('videoPantallaCompletaEnElHall').style.margin = "1rem";
