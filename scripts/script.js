@@ -1,31 +1,23 @@
-const leftSideVideo = document.getElementById('leftSideVideo');
-const rightSideVideo = document.getElementById('rightSideVideo');
-const botonIzq = document.getElementById('botonIzq');
-const botonDer = document.getElementById('botonDer');
-const smokeFilter = document.getElementById('smokeFilter');
-const anillo1 = document.getElementById('anillo1');
-const anillo2 = document.getElementById('anillo2');
-const likesVapo = document.getElementById('likesVapo');
-const likesEnElHall = document.getElementById('likesEnElHall');
-const patternVapo = document.getElementById('patternVapo');
-const patternEnElHall = document.getElementById('patternEnElHall');
-
-const getMobileOS = () => {
-    const ua = navigator.userAgent
-    if (/android/i.test(ua)) {
-      return "Android"
-    }
-    else if (/iPad|iPhone|iPod/.test(ua)){
-      return "iOS"
-    }
-    return "Other"
-}
-
-const os = getMobileOS();
-
+const videoPantallaCompletaVapo = document.getElementById('videoPantallaCompletaVapo');
+const videoPantallaCompletaEnElHall = document.getElementById('videoPantallaCompletaEnElHall');
 const URLapi = 'https://668c33570b61b8d23b0cc0e8.mockapi.io/metrica/likes';
 
-let side = null;
+let playerVapo;
+let playerEnElHall;
+
+// const getMobileOS = () => {
+//     const ua = navigator.userAgent
+//     if (/android/i.test(ua)) {
+//       return "Android"
+//     }
+//     else if (/iPad|iPhone|iPod/.test(ua)){
+//       return "iOS"
+//     }
+//     return "Other"
+// }
+
+// const os = getMobileOS();
+
 let banderaV = false;
 let banderaE = false;
 let countV = 0;
@@ -49,21 +41,19 @@ const svgs = `  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" heig
 const videoVapo = ` <video autoplay load volume="0.3" id="leftSideVideo" class="side left"> 
                         <source src="./videos/VAPO.mp4" type="video/mp4">
                     </video>`;
-const pLikesV = `   <label id="labelSvg" class="containerLikeVapo">
-                        <input type="checkbox" onclick="likeVapo()">
-                    </label>`;
 
 const videoEnElHall = ` <video autoplay load volume="0.3" id="rightSideVideo" class="side right"> 
                             <source src="./videos/EN-EL-HALL.mp4" type="video/mp4">
                         </video>`;
+const pLikesV = `   <label id="labelSvg" class="containerLikeVapo">
+                        <input type="checkbox" onclick="likeVapo()">
+                    </label>`;
 const pLikesE = `   <label id="labelSvg" class="containerLikeEnElHall">
                         <input type="checkbox" onclick="likeEnElHall()">
                     </label>`;
-
 const pLogo1 = `<video autoplay muted id="logoCarga1" class="logoCarga right"> 
                     <source src="./logos/logo.mp4" type="video/mp4">
                 </video>`;
-
 const pLogo2 = `<video autoplay muted id="logoCarga2" class="logoCarga right"> 
                     <source src="./logos/logo.mp4" type="video/mp4">
                 </video>`;
@@ -74,22 +64,19 @@ function accionIzquierda() {
         container.classList.remove('botonesMedio');
         document.getElementById('videoPatternV').innerHTML = '';
         document.getElementById('videoPatternE').innerHTML = '';
-        document.getElementById('videoPantallaCompletaVapo').innerHTML = pLogo1;
+        videoPantallaCompletaVapo.innerHTML = pLogo1;
         setTimeout(() => {
             if (document.getElementById('logoCarga1')){
                 document.getElementById('logoCarga1').classList.add('animate__animated','animate__fadeOut');
                 setTimeout(() => {
-                    document.getElementById('videoPantallaCompletaVapo').innerHTML = videoVapo;
+                    videoPantallaCompletaVapo.innerHTML = videoVapo;
+                    document.getElementById('leftSideVideo').volume = 0.3;
+                    document.getElementById('leftSideVideo').play();
                     document.getElementById('likesVapo').innerHTML = pLikesV;
                     document.getElementById('labelSvg').innerHTML += svgs;
                 }, 1000);
             }
         }, 3300);
-        if (document.getElementById('videoPantallaCompletaVapo')) {
-            document.getElementById('videoPantallaCompletaVapo').addEventListener("ended", (event) => {
-                accionIzquierda();
-            });
-        }
         setTimeout(() => {
             document.getElementById('botonesSlide').style.right = '-100%';
             if(window.innerWidth < 1024){
@@ -102,10 +89,10 @@ function accionIzquierda() {
         container.classList.add('botonesMedio');
         container.classList.remove('botonesIzquierda','botonesDerecha');
         if (document.getElementById('logoCarga1')){
-            document.getElementById('videoPantallaCompletaVapo').removeChild(document.getElementById('logoCarga1'));
+            videoPantallaCompletaVapo.removeChild(document.getElementById('logoCarga1'));
         }
         if (document.getElementById('leftSideVideo')){
-            document.getElementById('videoPantallaCompletaVapo').removeChild(document.getElementById('leftSideVideo'));
+            videoPantallaCompletaVapo.removeChild(document.getElementById('leftSideVideo'));
         }
         document.getElementById('leftSide').innerHTML = pLeftSideVideo;
         document.getElementById('rightSide').innerHTML = pRightSideVideo;
@@ -133,22 +120,20 @@ function accionDerecha() {
         container.classList.remove('botonesMedio');
         document.getElementById('videoPatternV').innerHTML = '';
         document.getElementById('videoPatternE').innerHTML = '';
-        document.getElementById('videoPantallaCompletaEnElHall').innerHTML = pLogo2;
+        videoPantallaCompletaEnElHall.innerHTML = pLogo2;
         setTimeout(() => {
             if (document.getElementById('logoCarga2')){
                 document.getElementById('logoCarga2').classList.add('animate__animated','animate__fadeOut');
                 setTimeout(() => {
-                    document.getElementById('videoPantallaCompletaEnElHall').innerHTML = videoEnElHall;
+                    videoPantallaCompletaEnElHall.innerHTML = videoEnElHall;
+                    document.getElementById('rightSideVideo').volume = 0.3;
+                    document.getElementById('rightSideVideo').play();
                     document.getElementById('likesEnElHall').innerHTML = pLikesE;
                     document.getElementById('labelSvg').innerHTML += svgs;
                 }, 1000);
             }
         }, 3300);
-        if (document.getElementById('videoPantallaCompletaEnElHall')) {
-            document.getElementById('videoPantallaCompletaEnElHall').addEventListener("ended", (event) => {
-                accionDerecha();
-            });
-        }
+
         setTimeout(() => {
             document.getElementById('botonesSlide').style.left = '-100%';
             if(window.innerWidth < 1024){
@@ -162,10 +147,10 @@ function accionDerecha() {
         container.classList.add('botonesMedio');
         container.classList.remove('botonesIzquierda','botonesDerecha');
         if (document.getElementById('logoCarga2')){
-            document.getElementById('videoPantallaCompletaEnElHall').removeChild(document.getElementById('logoCarga2'));
+            videoPantallaCompletaEnElHall.removeChild(document.getElementById('logoCarga2'));
         }
         if (document.getElementById('rightSideVideo')){
-            document.getElementById('videoPantallaCompletaEnElHall').removeChild(document.getElementById('rightSideVideo'));
+            videoPantallaCompletaEnElHall.removeChild(document.getElementById('rightSideVideo'));
         }
         document.getElementById('leftSide').innerHTML = pLeftSideVideo;
         document.getElementById('rightSide').innerHTML = pRightSideVideo;
@@ -185,41 +170,6 @@ function accionDerecha() {
             document.getElementById('patternEnElHall').classList.add('patternEnElHall');
         }, 100);
     }
-}
-
-function resetSides() {
-    if (window.innerWidth > 1024){
-        leftSide.style.flex = 1;
-        rightSide.style.flex = 1;
-        rightSide.style.visibility = 'visible';
-        leftSide.style.visibility = 'visible';
-
-    } else {
-        if (os == 'Android' || os == 'Other') {
-            container.style.transform = 'rotate(0deg)';
-        } 
-        leftSide.style.removeProperty('display');
-        rightSide.style.removeProperty('display');
-        container.style.transform = 'rotate(0deg)';
-        container.style.width = '100vw';
-        container.style.height = 'auto';
-    }
-    patternVapo.style.display = 'block';
-    patternEnElHall.style.display = 'block';
-    botonCircular.style.left = '0';
-    botonCircular.style.right = '0';
-    side = null;
-    likesEnElHall.style.display = 'none';
-    likesVapo.style.display = 'none';
-}
-
-function videosVistos() {
-    botonDer.style.backgroundColor = 'transparent';
-    botonIzq.style.backgroundColor = 'transparent';
-    leftSideVideo.muted = true;
-    rightSideVideo.muted = true;
-    botonIzq.innerHTML = '';
-    botonDer.innerHTML = '';
 }
 
 function likeVapo() {
