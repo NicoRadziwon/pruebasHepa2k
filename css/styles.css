@@ -115,6 +115,24 @@ body {
   transform: scaleX(-1);
 }
 
+.videoPattern {
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.patternVapo {
+  height: 400%;
+  display: flex;
+  position: absolute;
+}
+
+.humoVapo {
+  opacity: 0.9;
+}
+
 .containerLikeVapo input, .containerLikeEnElHall input {
   position: absolute;
   opacity: 0;
@@ -195,7 +213,7 @@ body {
 
 .logoCarga {
   width: 100vw;
-  height: 100vh;
+  height: 90vh;
   overflow: hidden;
 }
 
@@ -224,12 +242,16 @@ body {
       rotate: 90deg;
   }
 
+  .side {
+    display: block;
+  }
+
   .imgAnillo1, .imgAnillo2, .imgLogo {
       rotate: -90deg;
   }
 
   .left, .right {
-    height: 50vw;
+    height: 40vw;
   }
 
   .rotarIzq {

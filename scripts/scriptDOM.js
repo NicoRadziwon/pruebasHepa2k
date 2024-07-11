@@ -24,6 +24,8 @@ const pBotones = `  <button id="botonIzq" class="mitad izquierda" onclick="accio
                         <img id="anillo2" class="imgAnillo2" src="./logos/PNG-OBJ-SEPARADOS/PNG-ANILLO2.png">
                     </button>`;
 
+const humo = `<img src="./gifs/SMOKE.gif" class="humoVapo">`;
+
 function innerDOM() {
     leftSide.innerHTML = pLeftSideVideo;
     botonCircular.innerHTML = pBotones;
@@ -32,6 +34,7 @@ function innerDOM() {
     setTimeout(() => {
         document.getElementById("patternVapo").classList.add('patternVapo');
         document.getElementById("patternEnElHall").classList.add('patternEnElHall');
+        document.getElementById("patternVapo").innerHTML = humo;
     }, 1000);
 }
 
