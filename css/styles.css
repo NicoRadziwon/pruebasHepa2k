@@ -111,9 +111,6 @@ body {
   display: none;
 }
 
-.likesVapo {
-}
-
 .likesEnElHall {
   transform: scaleX(-1);
 }
@@ -233,15 +230,6 @@ body {
 
   .left, .right {
     height: 50vw;
-  }
-
-
-  .likesEnElHall {
-
-  }
-
-  .likesVapo {
-
   }
 
   .rotarIzq {

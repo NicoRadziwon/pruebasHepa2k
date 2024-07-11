@@ -8,16 +8,14 @@ const pLeftSideVideo = `    <div id="videoPatternV" class="videoPattern">
                                 <video autoplay muted loop id="leftSideVideo" class="side left">
                                     <source src="./videos/VAPO.mp4" type="video/mp4">
                                 </video>
-                            </div>
-                            <div id="likesVapo" class="likesVapo"></div>`;
+                            </div>`;
 
 const pRightSideVideo = `   <div id="videoPatternE" class="videoPattern">
                                 <div id="patternEnElHall"></div>
                                 <video autoplay muted loop id="rightSideVideo" class="side right"> 
                                     <source src="./videos/EN-EL-HALL.mp4" type="video/mp4">
                                 </video>
-                                </div>
-                            <div id="likesEnElHall" class="likesEnElHall"></div>`;
+                            </div>`;
 
 const pBotones = `  <button id="botonIzq" class="mitad izquierda" onclick="accionIzquierda()">
                         <img id="anillo1" class="imgAnillo1" src="./logos/PNG-OBJ-SEPARADOS/PNG-ANILLO1.png">
