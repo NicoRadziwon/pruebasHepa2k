@@ -8,12 +8,10 @@
 body {
   height: 100vh;
   display: flex;
-  justify-content: center;
-  overflow: hidden;
-  align-items: center;
   background: rgb(0,0,0);
   background: radial-gradient(circle, rgba(0,0,0,1) 60%, rgb(29, 29, 29) 92%, rgb(48, 48, 48) 100%);
   flex-direction: column;
+  justify-content: center;
 }
 
 .container {
@@ -21,6 +19,8 @@ body {
   width: 100vw;
   height: 100vh;
   position: relative;
+  margin: 1rem;
+  align-items: center;
 }
 
 .videoPattern {
@@ -52,15 +52,28 @@ body {
   flex: 1;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 .mitad {
-  width: 51%;
+  width: 50%;
   height: 100%;
   position: absolute;
   top: 0;
   cursor: pointer;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  -webkit-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+
+.mitad:hover {
+  background-color: rgb(217, 31, 31);
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+
+.mitad:active {
+  background-color: rgb(119, 16, 16);
 }
 
 .izquierda {
@@ -95,14 +108,14 @@ body {
 .likesVapo, .likesEnElHall {
   position: absolute;
   z-index: 1;
+  display: none;
 }
 
 .likesVapo {
-  left: 1rem;
 }
 
 .likesEnElHall {
-  right: 1rem;
+  transform: scaleX(-1);
 }
 
 .containerLikeVapo input, .containerLikeEnElHall input {
@@ -194,6 +207,7 @@ body {
     flex-direction: column;
     height: auto;
     align-items: center;
+    width: auto;
   }
 
   .videoPantallaCompletaVapo, .videoPantallaCompletaEnElHall{
@@ -223,13 +237,11 @@ body {
 
 
   .likesEnElHall {
-    bottom: 1rem;
-    right: 2rem;
+
   }
 
   .likesVapo {
-    top: 1rem;
-    left: 2rem;
+
   }
 
   .rotarIzq {

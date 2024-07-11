@@ -65,6 +65,8 @@ function accionIzquierda() {
         document.getElementById('videoPatternV').innerHTML = '';
         document.getElementById('videoPatternE').innerHTML = '';
         videoPantallaCompletaVapo.innerHTML = pLogo1;
+        container.style.margin = '0';
+        container.style.removeProperty('align-items');
         setTimeout(() => {
             if (document.getElementById('logoCarga1')){
                 document.getElementById('logoCarga1').classList.add('animate__animated','animate__fadeOut');
@@ -74,6 +76,9 @@ function accionIzquierda() {
                     document.getElementById('leftSideVideo').play();
                     document.getElementById('likesVapo').innerHTML = pLikesV;
                     document.getElementById('labelSvg').innerHTML += svgs;
+                    document.getElementById('likesVapo').style.display = "block";
+                    document.getElementById('videoPantallaCompletaVapo').style.margin = "1rem";
+                    document.getElementById('videoPantallaCompletaVapo').style.padding = "1rem";
                 }, 1000);
             }
         }, 3300);
@@ -97,7 +102,13 @@ function accionIzquierda() {
         document.getElementById('leftSide').innerHTML = pLeftSideVideo;
         document.getElementById('rightSide').innerHTML = pRightSideVideo;
         setTimeout(() => {
+            container.style.margin = '1rem';
             document.getElementById('botonesSlide').style.right = '0';
+            container.style.alignItems = 'center';
+            document.getElementById('videoPantallaCompletaVapo').style.margin = '0';
+            document.getElementById('videoPantallaCompletaVapo').style.padding = '0';
+            document.getElementById('videoPantallaCompletaEnElHall').style.margin = '0';
+            document.getElementById('videoPantallaCompletaEnElHall').style.padding = '0';
             if(window.innerWidth < 1024){
                 document.getElementById('botonesSlide').classList.add('rotarInvIzq');
                 document.getElementById('anillo1').classList.add('rotarInvImg1Izq');
@@ -121,6 +132,8 @@ function accionDerecha() {
         document.getElementById('videoPatternV').innerHTML = '';
         document.getElementById('videoPatternE').innerHTML = '';
         videoPantallaCompletaEnElHall.innerHTML = pLogo2;
+        container.style.margin = '0';
+        container.style.removeProperty('align-items');
         setTimeout(() => {
             if (document.getElementById('logoCarga2')){
                 document.getElementById('logoCarga2').classList.add('animate__animated','animate__fadeOut');
@@ -130,6 +143,9 @@ function accionDerecha() {
                     document.getElementById('rightSideVideo').play();
                     document.getElementById('likesEnElHall').innerHTML = pLikesE;
                     document.getElementById('labelSvg').innerHTML += svgs;
+                    document.getElementById('likesEnElHall').style.display = "block";
+                    document.getElementById('videoPantallaCompletaEnElHall').style.margin = "1rem";
+                    document.getElementById('videoPantallaCompletaEnElHall').style.padding = "1rem";
                 }, 1000);
             }
         }, 3300);
@@ -155,7 +171,13 @@ function accionDerecha() {
         document.getElementById('leftSide').innerHTML = pLeftSideVideo;
         document.getElementById('rightSide').innerHTML = pRightSideVideo;
         setTimeout(() => {
+            container.style.margin = '1rem';
             document.getElementById('botonesSlide').style.left = '0';
+            container.style.alignItems = 'center';
+            document.getElementById('videoPantallaCompletaVapo').style.margin = '0';
+            document.getElementById('videoPantallaCompletaVapo').style.padding = '0';
+            document.getElementById('videoPantallaCompletaEnElHall').style.margin = '0';
+            document.getElementById('videoPantallaCompletaEnElHall').style.padding = '0';
             if(window.innerWidth < 1024){
                 document.getElementById('botonesSlide').classList.add('rotarInvDer');
                 document.getElementById('anillo1').classList.add('rotarInvImg1Der');

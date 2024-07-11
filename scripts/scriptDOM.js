@@ -19,8 +19,7 @@ const pRightSideVideo = `   <div id="videoPatternE" class="videoPattern">
                                 </div>
                             <div id="likesEnElHall" class="likesEnElHall"></div>`;
 
-const pBotones = `  <img class="imgLogo" src="./logos/logo.jpg">
-                    <button id="botonIzq" class="mitad izquierda" onclick="accionIzquierda()">
+const pBotones = `  <button id="botonIzq" class="mitad izquierda" onclick="accionIzquierda()">
                         <img id="anillo1" class="imgAnillo1" src="./logos/PNG-OBJ-SEPARADOS/PNG-ANILLO1.png">
                     </button>
                     <button id="botonDer" class="mitad derecha" onclick="accionDerecha()">
