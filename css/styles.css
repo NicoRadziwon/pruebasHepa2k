@@ -89,9 +89,6 @@ body {
 
 }
 
-.izquierda:hover {
-}
-
 .derecha {
   color: white;
   text-align: center;
@@ -99,9 +96,6 @@ body {
   right: 0;
   border-top-right-radius: 50%;
   border-bottom-right-radius: 50%;
-}
-
-.derecha:hover {
 }
 
 .imgAnillo1 {

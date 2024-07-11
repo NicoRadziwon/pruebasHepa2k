@@ -38,11 +38,11 @@ const svgs = `  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" heig
                     <polygon points="50,50 40,40"></polygon>
                 </svg>`;
 
-const videoVapo = ` <video autoplay load volume="0.3" id="leftSideVideo" class="side left"> 
+const videoVapo = ` <video autoplay muted playsinline load volume="0.3" id="leftSideVideo" class="side left"> 
                         <source src="./videos/VAPO.mp4" type="video/mp4">
                     </video>`;
 
-const videoEnElHall = ` <video autoplay load volume="0.3" id="rightSideVideo" class="side right"> 
+const videoEnElHall = ` <video autoplay muted playsinline load volume="0.3" id="rightSideVideo" class="side right"> 
                             <source src="./videos/EN-EL-HALL.mp4" type="video/mp4">
                         </video>`;
 
@@ -77,7 +77,7 @@ function accionIzquierda() {
                 setTimeout(() => {
                     videoPantallaCompletaVapo.innerHTML = videoVapo;
                     document.getElementById('leftSideVideo').volume = 0.3;
-                    document.getElementById('leftSideVideo').play();
+                    document.getElementById('leftSideVideo').muted = false;
                     videoPantallaCompletaVapo.innerHTML += pLikesV;
                     document.getElementById('labelSvgV').innerHTML += svgs;
                     document.getElementById('likesVapo').style.display = 'block';
@@ -127,8 +127,6 @@ function accionIzquierda() {
                     document.getElementById('anillo2').classList.remove('rotarImg2Izq','rotarInvImg2Izq')
                 }, 1000);
             }
-            document.getElementById('patternVapo').classList.add('patternVapo');
-            document.getElementById('patternEnElHall').classList.add('patternEnElHall');
         }, 100);
     }
 }
@@ -147,7 +145,7 @@ function accionDerecha() {
                 setTimeout(() => {
                     videoPantallaCompletaEnElHall.innerHTML = videoEnElHall;
                     document.getElementById('rightSideVideo').volume = 0.3;
-                    document.getElementById('rightSideVideo').play();
+                    document.getElementById('rightSideVideo').muted = false;
                     videoPantallaCompletaEnElHall.innerHTML += pLikesE;
                     document.getElementById('labelSvgE').innerHTML += svgs;
                     document.getElementById('likesEnElHall').style.display = 'block';
@@ -199,11 +197,21 @@ function accionDerecha() {
                     document.getElementById('anillo2').classList.remove('rotarImg2Der','rotarInvImg2Der')
                 }, 1000);
             }
-            document.getElementById('patternVapo').classList.add('patternVapo');
-            document.getElementById('patternEnElHall').classList.add('patternEnElHall');
         }, 100);
     }
 }
+
+document.getElementById('botonIzq').addEventListener('click', () => {
+    setTimeout(() => {
+        document.getElementById('leftSideVideo').muted = false;
+        document.getElementById('leftSideVideo').addEventListener('ended', () => {
+            document.getElementById('leftSideVideo').play();
+        });
+    }, 4500);
+});
+
+
+
 
 function likeVapo() {
     if(banderaV == false) {
@@ -264,3 +272,14 @@ function conexionAPI() {
             }
         });
 }
+
+function pulsacionBoton() {
+    setTimeout(() => {
+        document.getElementById('botonesSlide').classList.remove('animate__animated','animate__heartBeat');
+    }, 2000);
+    setTimeout(() => {
+        document.getElementById('botonesSlide').classList.add('animate__animated','animate__heartBeat');
+    }, 200);
+}
+
+setInterval(pulsacionBoton(),1000);

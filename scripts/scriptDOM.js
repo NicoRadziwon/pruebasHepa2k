@@ -14,22 +14,9 @@ const pRightSideVideo = `   <div id="videoPatternE" class="videoPattern">
                                 </video>
                             </div>`;
 
-const pBotones = `  <button id="botonIzq" class="mitad izquierda" onclick="accionIzquierda()">
-                        <img id="anillo1" class="imgAnillo1" src="./imagenes/vape.png">
-                    </button>
-                    <button id="botonDer" class="mitad derecha" onclick="accionDerecha()">
-                        <img id="anillo2" class="imgAnillo2" src="./imagenes/bill.png">
-                    </button>`;
-
 function innerDOM() {
     leftSide.innerHTML = pLeftSideVideo;
-    botonCircular.innerHTML = pBotones;
     rightSide.innerHTML = pRightSideVideo;
 }
-
-const tag = document.createElement('script');
-tag.src = "https://www.youtube.com/iframe_api";
-const firstScriptTag = document.getElementsByTagName('script')[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 innerDOM();
