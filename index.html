@@ -1,30 +1,35 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="./logos/hepa.jpg"/>
-    <title>Hepa2k</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <link rel="manifest" href="manifest.json">
-    <link rel="stylesheet" href="./css/styles.css">
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Snipet</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='./css/bootstrap.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='./css/styles.css'>
 </head>
 <body>
-    <div id="container" class="container botonesMedio">
-        <div id="leftSide" class="side left"></div>
-        <div id="videoPantallaCompletaVapo" class="videoPantallaCompletaVapo"></div>
-        <div id="botonesSlide" class="boton-circular animate__animated animate__heartBeat">
-            <button id="botonIzq" class="mitad izquierda" onclick="accionIzquierda()">
-                <img id="anillo1" class="imgAnillo1" src="./imagenes/vape.png">
-            </button>
-            <button id="botonDer" class="mitad derecha" onclick="accionDerecha()">
-                <img id="anillo2" class="imgAnillo2" src="./imagenes/bill.png">
-            </button>
+    <header id="header">
+        <h1>#NewSwing</h1>
+    </header>
+    <main id="main">
+        <div class="card" id="card1">
+            <div class="circle botonCircular" id="but1"></div>
+            <video autoplay muted playsinline id="video1">
+                <source src="./videos/EN-EL-HALL.mp4" type="video/mp4">
+            </video>
         </div>
-        <div id="videoPantallaCompletaEnElHall" class="videoPantallaCompletaEnElHall"></div>
-        <div id="rightSide" class="side right"></div>
-    </div>
-    <script src="./scripts/script.js"></script>
-    <script src="./scripts/scriptDOM.js" defer></script>
+        <div class="card" id="card2">
+            <div class="circle botonCircular" id="but2"></div>
+            <video autoplay muted playsinline id="video2">
+                <source src="./videos/EN-EL-HALL.mp4" type="video/mp4">
+            </video>
+        </div>
+    </main>
+    <footer id="footer">
+        <p>&copy; 2024 Snipet Hepa2k</p>
+    </footer>
+    <script src='./js/script.js'></script>
+    <script src='./js/bootstrap.js'></script>
 </body>
 </html>

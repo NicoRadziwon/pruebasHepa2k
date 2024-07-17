@@ -1,427 +1,99 @@
 * {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  overflow: hidden;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    width: 100vw;
+    height: 100vh;
+}
+
+header {
+    background-color: #007BFF;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    border-radius: 5px;
+    width: 80%;
 }
 
 body {
-  height: 100vh;
-  display: flex;
-  background: rgb(0,0,0);
-  background: radial-gradient(circle, rgba(0,0,0,1) 60%, rgb(29, 29, 29) 92%, rgb(48, 48, 48) 100%);
-  flex-direction: column;
-  justify-content: center;
-}
-
-.container {
-  display: flex;
-  width: 100vw;
-  height: 100vh;
-  position: relative;
-  margin: 1rem;
-  align-items: center;
-}
-
-.videoPattern {
-  position: relative;
-}
-
-.boton-circular {
-  width: 8vw;
-  height: 8vw;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  margin: auto;
-  z-index: 3;
-  border-radius: 50%;
-  overflow: hidden;
-  transition: left 0.8s, right 0.8s;
-}
-
-.videoPantallaCompletaVapo, .videoPantallaCompletaEnElHall {
-  display: flex;
-  align-items: center;
-}
-
-.imgLogo {
-  width: 100%;
-  height: 100%;
-}
-
-.side {
-  width: 100%;
-  flex: 1;
-}
-
-.mitad {
-  width: 50%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  cursor: pointer;
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-  -webkit-transform: translate(0, 0);
-  transform: translate(0, 0);
-}
-
-.mitad:hover {
-  background-color: rgb(138, 138, 138);
-  -webkit-transition: all 0.35s ease;
-  transition: all 0.35s ease;
-}
-
-.mitad:active {
-  background-color: rgb(71, 71, 71);
-}
-
-.izquierda {
-  color: white;
-  text-align: center;
-  border: none;
-  left: 0;
-  border-top-left-radius: 50%;
-  border-bottom-left-radius: 50%;
-
-}
-
-.derecha {
-  color: white;
-  text-align: center;
-  border: none;
-  right: 0;
-  border-top-right-radius: 50%;
-  border-bottom-right-radius: 50%;
-}
-
-.imgAnillo1 {
-  width: 40%;
-}
-
-.imgAnillo2 {
-  width: 80%;
-  rotate: 90deg;
-}
-
-.resoGif {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Botones Like */
-.likesVapo, .likesEnElHall {
-  position: absolute;
-  z-index: 1;
-  display: none;
-}
-
-.likesEnElHall {
-  transform: scaleX(-1);
-}
-
-.videoPattern {
-  display: flex;
-  overflow: hidden;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.patternVapo {
-  height: 400%;
-  display: flex;
-  position: absolute;
-}
-
-.humoVapo {
-  opacity: 0.9;
-}
-
-.containerLikeVapo input, .containerLikeEnElHall input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
-  }
-  
-.containerLikeVapo, .containerLikeEnElHall {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  cursor: pointer;
-  user-select: none;
-}
-
-.containerLikeVapo input:checked ~ .like, .containerLikeEnElHall input:checked ~ .like {
-  animation: kfs-fill-like .5s forwards;
-}
-
-.containerLikeVapo .like, .containerLikeEnElHall .like {
-  fill: none;
-  stroke: white;
-}
-
-.containerLikeVapo input:checked ~ .celebrate, .containerLikeEnElHall input:checked ~ .celebrate {
-  display: block;
-}
-
-.containerLikeVapo .celebrate, .containerLikeEnElHall .celebrate {
-  position: absolute;
-  animation: kfs-celebrate 1s;
-  animation-fill-mode: forwards;
-  display: none;
-  stroke: white;
-}
-
-@keyframes kfs-celebrate {
-  0% {
-    transform: scale(0);
-    opacity: 0;
-  }
-
-  50% {
-    opacity: 1;
-  }
-
-  100% {
-    transform: scale(1.5) rotate(180deg);
-    opacity: 0;
-    display: none;
-  }
-}
-  
-@keyframes kfs-fill-like {
-
-  50% {
-    fill: white;
-    stroke: white;
-    transform: scale(1.2);
-  }
-
-  100% {
-    fill: white;
-    stroke: white;
-  }
-}
-
-@keyframes move {
-  0% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: 40px 40px;
-  }
-}
-
-.logoCarga {
-  width: 100vw;
-  height: 90vh;
-  overflow: hidden;
-}
-
-@media only screen and (max-width: 1024px) {
-  .container {
+    font-family: Arial, sans-serif;
+    background: rgb(0,0,0);
+    color: #333;
+    line-height: 1.6;
+    display: flex;
     flex-direction: column;
-    height: auto;
+    justify-content: center;
     align-items: center;
-    width: auto;
-  }
-
-  .videoPantallaCompletaVapo, .videoPantallaCompletaEnElHall{
-    width: 90%;
-  }
-
-  .logoCarga {
-    align-items: center;
-    width: 100vw;
-  }
-
-  .boton-circular {
-      width: 5rem;
-      height: 5rem;
-      rotate: 90deg;
-  }
-
-  .side {
-    display: block;
-  }
-
-  .imgAnillo1, .imgAnillo2, .imgLogo {
-      rotate: -90deg;
-  }
-
-  .left, .right {
-    height: 40vw;
-  }
-
-  .rotarIzq {
-    animation: rotarIzq 0.8s linear forwards;
-  }
-  
-  @keyframes rotarIzq {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(-90deg);
-    }
-  }
-
-  .rotarInvIzq {
-    animation: rotarInvIzq 0.8s linear forwards;
-  }
-
-  @keyframes rotarInvIzq {
-    from {
-      transform: rotate(-90deg);
-    }
-    to {
-      transform: rotate(0deg);
-    }
-  }
-
-  .rotarImg1Izq {
-    animation: rotarImg1Izq 0.8s linear forwards;
-  }
-  
-  @keyframes rotarImg1Izq {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(90deg);
-    }
-  }
-
-  .rotarInvImg1Izq {
-    animation: rotarInvImg1Izq 0.8s linear forwards;
-  }
-
-  @keyframes rotarInvImg1Izq {
-    from {
-      transform: rotate(90deg);
-    }
-    to {
-      transform: rotate(0deg);
-    }
-  }
-
-  .rotarImg2Izq {
-    animation: rotarImg2Izq 0.8s linear forwards;
-  }
-  
-  @keyframes rotarImg2Izq {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(90deg);
-    }
-  }
-
-  .rotarInvImg2Izq {
-    animation: rotarInvImg2Izq 0.8s linear forwards;
-  }
-
-  @keyframes rotarInvImg2Izq {
-    from {
-      transform: rotate(90deg);
-    }
-    to {
-      transform: rotate(0deg);
-    }
-  }
-
-
-  .rotarDer {
-    animation: rotarDer 0.8s linear forwards;
-  }
-  
-  @keyframes rotarDer {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(-90deg);
-    }
-  }
-
-  .rotarInvDer {
-    animation: rotarInvDer 0.8s linear forwards;
-  }
-
-  @keyframes rotarInvDer {
-    from {
-      transform: rotate(-90deg);
-    }
-    to {
-      transform: rotate(0deg);
-    }
-  }
-
-  .rotarImg1Der {
-    animation: rotarImg1Der 0.8s linear forwards;
-  }
-  
-  @keyframes rotarImg1Der {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(90deg);
-    }
-  }
-
-  .rotarInvImg1Der {
-    animation: rotarInvImg1Der 0.8s linear forwards;
-  }
-
-  @keyframes rotarInvImg1Der {
-    from {
-      transform: rotate(90deg);
-    }
-    to {
-      transform: rotate(0deg);
-    }
-  }
-
-  .rotarImg2Der {
-    animation: rotarImg2Der 0.8s linear forwards;
-  }
-  
-  @keyframes rotarImg2Der {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(90deg);
-    }
-  }
-
-  .rotarInvImg2Der {
-    animation: rotarInvImg2Der 0.8s linear forwards;
-  }
-
-  @keyframes rotarInvImg2Der {
-    from {
-      transform: rotate(90deg);
-    }
-    to {
-      transform: rotate(0deg);
-    }
-  }
+    width: 100%;
+    height: 100%;
+    padding: 40px;
 }
 
-@media only screen and (max-width: 500px) {
-  .left, .right {
-    height: auto;
-  }
+main {
+    width: 100%;
+    padding: 20px;
+}
+
+.card {
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.card h2 {
+    margin-bottom: 10px;
+}
+
+.circle {
+    background: lightblue;
+    position: absolute;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 1;
+}
+
+.hide {
+    display: none;
+}
+
+.rotaVid {
+    rotate: 90deg;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    width: 100vw;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 5px;
+    width: 80%;
+}
+
+p {
+    margin: 0;
+}
+
+/* Diseño receptivo */
+@media (min-width: 600px) {
+    body {
+        max-width: 600px;
+        margin: 0 auto;
+    }
 }
 
